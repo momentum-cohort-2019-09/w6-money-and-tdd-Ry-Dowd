@@ -104,10 +104,9 @@ class Money:
         """
         return Money(self.amount*other, self.currency)
 
-    def __div__(self, other):
+    def __truediv__(self, other):
         """
         Divide a money object by a number to get a new money object.
         """
-        print(type(self.amount))
-        amount = float(self.amount) / float(other)
-        return Money(amount, self.currency)
+
+        return Money(self.amount/other, self.currency)
